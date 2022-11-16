@@ -1,0 +1,18 @@
+{
+  "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "command": {
+    "bootstrap": {
+      "concurrency": 2,
+      "npmClientArgs": ["--no-package-lock"]
+    },
+    "publish": {
+      "registry": "https://npm-registry.eduzukan.jp/",
+      "message": ":rocket: publish %s [skip ci]",
+      "verifyAccess": false,
+      "exact": true
+    }
+  },
+  "useWorkspaces": true,
+  "version": "0.1.0"
+}

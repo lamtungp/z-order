@@ -1,0 +1,29 @@
+{
+  "name": "z-order",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "clean": "lerna clean --yes && lerna run clean",
+    "migrate": "lerna run migrate --scope \"packages/entities\"",
+    "seed": "lerna run seed --scope \"packages/entities\"",
+    "build:apps": "lerna run build --concurrency=1",
+    "build": "run-s build:apps",
+    "test:apps": "lerna run test",
+    "start": "lerna run start",
+    "dev": "lerna run dev"
+  },
+  "author": "Lam Tung",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "dotenv": "^7.0.0",
+    "lerna": "^6.0.3",
+    "npm-run-all": "^4.1.5",
+    "retry-cli": "^0.6.0"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {}
+}
