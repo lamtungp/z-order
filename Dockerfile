@@ -7,5 +7,6 @@ COPY yarn.lock ./
 COPY . .
 
 RUN yarn --frozen-lockfile --ignore-optional
+RUN apk update && apk add bash
 
-CMD [ "yarn", "dev" ]
+CMD [ "/bin/bash", "/app/entrypoint.sh" ]
