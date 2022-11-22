@@ -1,4 +1,4 @@
-import { Box, Theme } from '@mui/material';
+import { Box, Container, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
 
@@ -12,6 +12,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 5,
     justifyContent: 'space-between',
     width: '100%',
+    display: 'flex !important',
+    alignItems: 'center',
   },
 }));
 
@@ -22,18 +24,19 @@ const Header: React.FC<Props> = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <Box
-      component={'header'}
-      className={classes.HeaderWrapper}
-      display="flex"
-      alignItems="center"
-    >
-      <HeaderSearch />
+    <Box sx={{ background: '#4097ed' }}>
+      <Container
+        maxWidth="xl"
+        component={'header'}
+        className={classes.HeaderWrapper}
+      >
+        <HeaderSearch />
 
-      <Box display="flex" alignItems="center">
-        <HeaderButtons />
-        <HeaderUserbox />
-      </Box>
+        <Box display="flex" alignItems="center">
+          <HeaderButtons />
+          <HeaderUserbox />
+        </Box>
+      </Container>
     </Box>
   );
 };

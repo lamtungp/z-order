@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   NotificationsBadge: {
     '& .MuiBadge-badge': {
       backgroundColor: alpha(theme.palette.error.main, 0.1),
-      color: theme.palette.error.main,
+      color: '#ffffff',
       minWidth: 16,
       height: 16,
       padding: 0,
@@ -53,8 +53,8 @@ function HeaderNotifications() {
 
   return (
     <>
-      <Tooltip arrow title="Notifications">
-        <IconButton color="primary" ref={ref} onClick={handleOpen}>
+      <Tooltip arrow title="Thông báo">
+        <IconButton disableTouchRipple ref={ref} onClick={handleOpen}>
           <Badge
             className={classes.NotificationsBadge}
             badgeContent={1}
@@ -87,7 +87,7 @@ function HeaderNotifications() {
           justifyContent="center"
         >
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-            Notifications
+            Thông báo
           </Typography>
         </Box>
         <Divider />

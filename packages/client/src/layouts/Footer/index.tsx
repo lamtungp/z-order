@@ -9,9 +9,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   FooterWrapper: {
     borderRadius: 0,
     padding: theme.spacing(0, 2),
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
+    display: 'flex',
+    justifyContent: 'end',
   },
 
   FooterContent: {

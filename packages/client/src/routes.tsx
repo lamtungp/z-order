@@ -6,22 +6,41 @@ import SidebarLayout from './layouts/SidebarLayout';
 import Loader from './components/SuspenseLoader';
 import BaseLayout from './layouts/BaseLayout';
 
+const Explore = Loader(lazy(() => import('src/pages/Explore')));
+
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <BaseLayout />,
+    element: <SidebarLayout />,
     children: [
       {
-        path: 'manage',
-        element: <SidebarLayout />,
-        children: [],
-      },
-
-      {
         path: 'explore',
-        element: <SidebarLayout />,
+        element: <Explore />,
       },
-
+      {
+        path: 'add-order',
+        element: <Explore />,
+      },
+      {
+        path: 'my-orders',
+        element: <Explore />,
+      },
+      {
+        path: 'my-schedules',
+        element: <Explore />,
+      },
+      {
+        path: 'recently-orders',
+        element: <Explore />,
+      },
+      {
+        path: 'contact',
+        element: <Explore />,
+      },
+      {
+        path: 'feedback-app',
+        element: <Explore />,
+      },
       {
         path: '/',
         element: <Navigate to="/explore" replace />,

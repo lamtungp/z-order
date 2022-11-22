@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   MainWrapper: {
     height: '100%',
     width: '100%',
+    background: '#e9f0f7',
 
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,

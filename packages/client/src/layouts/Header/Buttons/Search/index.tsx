@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       [theme.breakpoints.up('sm')]: {
         width: '12ch',
         '&:focus': {
-          width: '20ch',
+          width: '24ch',
         },
       },
     },
@@ -54,13 +54,13 @@ const HeaderSearch = () => {
     <>
       <Box className={classes.Search}>
         <Box className={classes.SearchIconWrapper}>
-          <IconButton color="primary">
+          <IconButton>
             <SearchTwoToneIcon />
           </IconButton>
         </Box>
         <InputBase
           className={classes.InputBase}
-          placeholder="Search…"
+          placeholder="Tìm kiếm..."
           inputProps={{ 'aria-label': 'search' }}
         />
       </Box>

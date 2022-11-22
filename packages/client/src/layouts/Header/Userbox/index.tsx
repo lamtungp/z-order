@@ -110,26 +110,26 @@ const HeaderDropdown = () => {
           <ListItemIcon>
             <AccountBoxOutlined />
           </ListItemIcon>
-          <ListItemText>Profile</ListItemText>
+          <ListItemText>Thông tin cá nhân</ListItemText>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <ListAltOutlined />
           </ListItemIcon>
-          <ListItemText>My Orders</ListItemText>
+          <ListItemText>Danh sách đặt của tôi</ListItemText>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <ManageAccountsOutlined />
           </ListItemIcon>
-          <ListItemText>Settings</ListItemText>
+          <ListItemText>Cài đặt</ListItemText>
         </MenuItem>
         <Divider className={classes.Divider} />
         <MenuItem onClick={() => {}}>
           <ListItemIcon>
             <LogoutOutlined />
           </ListItemIcon>
-          <ListItemText>Logout</ListItemText>
+          <ListItemText>Đăng xuất</ListItemText>
         </MenuItem>
       </Menu>
     </>

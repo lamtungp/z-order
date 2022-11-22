@@ -32,47 +32,47 @@ export const items: MenuItems[] = [
   {
     items: [
       {
-        name: 'Explore',
+        name: 'Khám phá',
         icon: <Explore />,
         link: '/explore',
       },
       {
-        name: 'Add Order',
+        name: 'Thêm danh sách mua',
         icon: <AddShoppingCart />,
-        link: '#',
+        link: '/add-order',
       },
     ],
   },
   {
     items: [
       {
-        name: 'My Orders',
+        name: 'Danh sách đặt của tôi',
         icon: <ListAltOutlined />,
-        link: '#',
+        link: '/my-orders',
       },
       {
-        name: 'My Schedules',
+        name: 'Lịch đặt của tôi',
         icon: <EventNote />,
-        link: '#',
+        link: '/my-schedules',
       },
       {
-        name: 'Recently Orders',
+        name: 'Đơn đặt gần đây',
         icon: <Schedule />,
-        link: '#',
+        link: '/recently-orders',
       },
     ],
   },
   {
     items: [
       {
-        name: 'Contact',
+        name: 'Liên hệ Admin',
         icon: <SupportAgentOutlined />,
-        link: '#',
+        link: '/contact',
       },
       {
-        name: 'Feedback',
+        name: 'Phản hồi về ứng dụng',
         icon: <ChatBubbleOutlineOutlined />,
-        link: '#',
+        link: '/feedback-app',
       },
     ],
   },
