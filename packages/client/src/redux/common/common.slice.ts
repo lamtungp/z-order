@@ -7,7 +7,7 @@ export type CommonState = {
 };
 
 const initialState: CommonState = {
-  openSidebar: true,
+  openSidebar: false,
 };
 
 export const alertSlice = createSlice({

@@ -17,11 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(1),
   },
 
-  BoxContent: {
-    padding: theme.spacing(2, 2, 4),
-    background: '#fff',
-    borderRadius: '6px',
-  },
+  BoxContent: {},
 
   TagRecommend: {
     marginBottom: theme.spacing(2),
@@ -38,7 +34,12 @@ const Explore = () => {
           Đề xuất
         </Typography>
         <Box className={classes.TagRecommend}>
-          <Tag variant="outlined" label="All" onClick={() => {}} />
+          <Tag
+            sx={{ background: '#ffffff' }}
+            variant="outlined"
+            label="All"
+            onClick={() => {}}
+          />
         </Box>
       </Box>
 
@@ -48,11 +49,16 @@ const Explore = () => {
         </Typography>
         <Box className={classes.BoxContent}>
           <Box className={classes.TagRecommend}>
-            <Tag variant="outlined" label="All" onClick={() => {}} />
+            <Tag
+              sx={{ background: '#ffffff' }}
+              variant="outlined"
+              label="All"
+              onClick={() => {}}
+            />
           </Box>
           <Grid container spacing={2}>
             {[1, 2, 3, 4, 5].map((item, index) => (
-              <Grid item xs={2} key={index}>
+              <Grid item xs={12} sm={3} key={index}>
                 <MediaCard
                   image="/images/image1.jpg"
                   title="Title"
@@ -71,11 +77,16 @@ const Explore = () => {
         </Typography>
         <Box className={classes.BoxContent}>
           <Box className={classes.TagRecommend}>
-            <Tag variant="outlined" label="All" onClick={() => {}} />
+            <Tag
+              sx={{ background: '#ffffff' }}
+              variant="outlined"
+              label="All"
+              onClick={() => {}}
+            />
           </Box>
           <Grid container spacing={2}>
             {[1, 2].map((item, index) => (
-              <Grid item xs={2} key={index}>
+              <Grid item xs={12} sm={3} key={index}>
                 <MediaCard
                   image="/images/image1.jpg"
                   title="Title"

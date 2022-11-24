@@ -93,7 +93,7 @@ function HeaderNotifications() {
         <Divider />
         <List sx={{ p: 0 }}>
           <ListItem
-            sx={{ p: 2, minWidth: 350, display: { xs: 'block', sm: 'flex' } }}
+            sx={{ p: 2, minWidth: 280, display: { xs: 'block', sm: 'flex' } }}
           >
             <Box flex="1">
               <Typography

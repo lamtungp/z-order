@@ -10,8 +10,8 @@ const TagStyle: SxProps = {
   },
 };
 
-const Tag = ({ ...props }: ChipProps) => {
-  return <Chip sx={TagStyle} {...props} />;
+const Tag = ({ sx, ...props }: ChipProps) => {
+  return <Chip sx={{ ...TagStyle, ...sx }} {...props} />;
 };
 
 export default Tag;
