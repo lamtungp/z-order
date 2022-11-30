@@ -2,10 +2,13 @@ import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouteObject } from 'react-router';
 
-import SidebarLayout from './layouts/SidebarLayout';
+import SidebarLayout from './layouts/admin/SidebarLayout';
 import Loader from './components/SuspenseLoader';
 import BaseLayout from './layouts/BaseLayout';
 
+const Home = Loader(lazy(() => import('src/pages/Home')));
+
+// admin
 const Explore = Loader(lazy(() => import('src/pages/admin/Explore')));
 const RestaurantDetails = Loader(
   lazy(() => import('src/pages/admin/RestaurantDetails')),
@@ -16,6 +19,7 @@ const routes: RouteObject[] = [
     path: '/',
     element: <BaseLayout />,
     children: [
+      { path: '/', element: <Home /> },
       {
         path: 'admin',
         element: <SidebarLayout />,
