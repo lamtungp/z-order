@@ -1,38 +1,79 @@
 import {
   Box,
   Button,
-  Container,
+  FormControl,
   Grid,
-  SxProps,
+  InputAdornment,
+  InputBase,
   Theme,
   Typography,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
+import { useNavigate } from 'react-router';
+import useResponsive from 'src/hooks/useResponsive';
+
+import Tag from '../Tag';
 
 const useStyles = makeStyles((theme: Theme) => ({
   Root: {
-    padding: theme.spacing(1, 0),
-    paddingTop: 71,
-    position: 'relative',
-    backgroundImage: 'url(/images/banner-bg.svg)',
-  },
-
-  CircleImage: {
     position: 'absolute',
-    left: 44,
-    bottom: 60,
-    objectFit: 'contain',
-    overflow: 'hidden',
+    top: 0,
+    width: '100%',
+    color: '#FFFFFF',
+    paddingTop: '13.5%',
+
+    [theme.breakpoints.down('md')]: {
+      position: 'relative',
+      paddingTop: 20,
+      color: '#000',
+    },
   },
 
-  EatingImage: {},
+  BannerTextBox: {
+    maxWidth: 960,
+    margin: '0 auto',
+    padding: '0 20px',
+
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+      justifyContent: 'center',
+    },
+  },
+
+  BannerTextTitle: {
+    lineHeight: 1.6,
+
+    [theme.breakpoints.down('lg')]: {
+      fontSize: 26,
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 20,
+    },
+  },
+
+  ButtonSearch: {
+    background: '#F3BA00',
+    padding: '15px 18px',
+    borderRadius: '0 8px 8px 0',
+    color: '#FFFFFF',
+
+    '&:hover': {
+      background: '#F3BA29',
+    },
+  },
 }));
+
+const labelTags = ['All', 'Đồ ăn', 'Đồ uống', 'Đồ chay'];
 
 const Banner = () => {
   const classes = useStyles();
+  const matchDownMd = useResponsive({ query: 'down', key: 'md' });
   const menuElement = document.getElementById('menu');
   const aboutElement = document.getElementById('about');
+  const navigator = useNavigate();
 
   // const orderNow = () => {
   //   window.scrollTo({
@@ -51,49 +92,83 @@ const Banner = () => {
   // };
 
   return (
-    <Box className={classes.Root}>
-      <Container maxWidth="md">
-        <Box className={classes.CircleImage}>
-          <Fade direction="left"></Fade>
-        </Box>
+    <Box>
+      <img src="/images/banner-bg.svg" alt="banner" width={'100%'} />
 
-        <Box className="absolute top-16 lg:left-72 left-60 lg:w-auto sm:w-10 w-8 object-contain overflow-hidden">
-          <Fade direction="up"></Fade>
-        </Box>
-        <Box className="max-w-screen-xl mx-auto lg:py-10  sm:pt-32 pt-20">
-          <Box className="flex lg:justify-between lg:items-center overflow-hidden p-0.5 lg:flex-row flex-col lg:gap-4 gap-8">
-            <Grid container>
-              <Grid item xs={5}>
-                <Fade direction="left">
-                  <Box className="main_heading">
-                    <Typography variant="h5" fontWeight="bold">
-                      Z-Order giúp bạn tiết kiệm thời gian và đặt đồ nhanh chóng
-                    </Typography>
-                    <Typography variant="subtitle1">
-                      Đặt đồ ngay bây giờ!
-                    </Typography>
-                    <Box className="flex items-center xl:mt-12 lg:mt-10  sm:mt-8 mt-6 gap-4 flex-wrap">
-                      <Button>Order Now</Button>
-                      <Button>View More</Button>
-                    </Box>
-                  </Box>
-                </Fade>
-              </Grid>
-            </Grid>
-
-            {/* <Fade direction="right">
-            <Box className="lg:w-1/2 lg:m-0 lg:max-w-none sm:max-w-lg  max-w-xs  mx-auto">
-              <img
-                src="/images/eating_together.svg"
-                alt=""
-                width={600}
-                height={600}
-              />
-            </Box>
-          </Fade> */}
-          </Box>
-        </Box>
-      </Container>
+      <Box className="">
+        <Fade direction="up"></Fade>
+      </Box>
+      <Box className={classes.Root}>
+        <Grid container className={classes.BannerTextBox}>
+          <Grid item xs={10} md={6}>
+            <Fade direction={matchDownMd ? 'up' : 'left'}>
+              <Box
+                className="main_heading"
+                sx={{ textAlign: matchDownMd ? 'center' : 'inherit' }}
+              >
+                <Typography
+                  className={classes.BannerTextTitle}
+                  variant="h4"
+                  fontWeight="bold"
+                >
+                  Z-Order
+                </Typography>
+                <Typography
+                  sx={{ margin: matchDownMd ? '8px 0' : '18px 0' }}
+                  variant="body1"
+                >
+                  Ứng dụng giúp bạn tiết kiệm thời gian và đặt đồ nhanh chóng
+                  <br />
+                  Hãy bắt đầu trải nghiệm ngay bây giờ nào!
+                </Typography>
+                <Box sx={{ paddingRight: matchDownMd ? 0 : '30%' }}>
+                  <FormControl
+                    sx={{
+                      background: matchDownMd ? 'inherit' : '#FFFFFF',
+                      borderRadius: '8px',
+                      height: matchDownMd ? '34px' : 'inherit',
+                    }}
+                    variant="outlined"
+                    fullWidth
+                  >
+                    <InputBase
+                      sx={{
+                        padding: '11.25px 15px',
+                        borderRadius: '8px',
+                        paddingRight: 0,
+                        border: '1px solid rgba(0, 0, 0, 0.23)',
+                      }}
+                      placeholder="Search restaurant or food..."
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <Button className={classes.ButtonSearch}>
+                            Search
+                          </Button>
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
+                </Box>
+                <Box sx={{ marginTop: matchDownMd ? '40px' : '24px' }}>
+                  {labelTags.map((label, index) => (
+                    <Tag
+                      sx={{
+                        borderColor: '#F3BA00',
+                        color: matchDownMd ? '#000000' : '#FFFFFF',
+                        marginRight: '6px',
+                      }}
+                      variant="outlined"
+                      label={label}
+                      key={index}
+                      onClick={() => {}}
+                    />
+                  ))}
+                </Box>
+              </Box>
+            </Fade>
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 };

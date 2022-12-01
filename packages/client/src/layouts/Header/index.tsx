@@ -11,6 +11,7 @@ import {
   ButtonBase,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { MenuOutlined } from '@mui/icons-material';
 
 const menuItem = [
   {
@@ -58,26 +59,17 @@ const useStyles = makeStyles((theme: Theme) => ({
 
   Header: {
     maxWidth: 960,
-    paddingLeft: 10,
-    paddingRight: 10,
     display: 'flex',
     margin: '0 auto',
     justifyContent: 'space-between',
     alignItems: 'center',
-
-    [theme.breakpoints.down(1000)]: {
-      paddingLeft: 20,
-      paddingRight: 20,
-    },
+    padding: '10px 20px',
 
     [theme.breakpoints.down('md')]: {
-      padding: '14px 20px',
-    },
+      paddingLeft: 20,
+      paddingRight: 20,
 
-    [theme.breakpoints.down('sm')]: {
-      padding: '6px 20px',
-
-      '& > img': {
+      '& > a > img': {
         width: 120,
       },
     },
@@ -101,17 +93,30 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
 
-  ButtonRegister: {
-    width: 120,
-    color: '#250f8a',
-    backgroundColor: '#ffffff',
-    borderRadius: 20,
-    fontWeight: 600,
+  ButtonSignIn: {
+    marginLeft: 12,
+    color: '#FFFFFF',
+    textTransform: 'none',
+    fontWeight: 500,
     fontSize: 16,
-    textTransform: 'uppercase',
 
     '&:hover': {
-      backgroundColor: '#ffffff',
+      textDecoration: 'underline',
+    },
+  },
+
+  ButtonSignUp: {
+    marginLeft: 6,
+    minWidth: 100,
+    background: '#F3BA00',
+    borderRadius: 8,
+    color: '#FFFFFF',
+    textTransform: 'none',
+    fontWeight: 500,
+    fontSize: 16,
+
+    '&:hover': {
+      background: 'bisque',
     },
   },
 }));
@@ -147,14 +152,10 @@ const Header = ({ displayToggle, handleLeftDrawerToggle }: any) => {
       >
         <Box className={classes.Header} component="nav">
           <Link to={'/'}>
-            <img src="/favicon.ico" alt="logo" />
+            <img src="/images/logo.svg" alt="logo" />
           </Link>
           {displayToggle ? (
             <Box component="span">
-              <Typography
-                component="span"
-                sx={{ marginRight: '4px', color: '#ffffff' }}
-              ></Typography>
               <ButtonBase
                 sx={{
                   borderRadius: '12px',
@@ -167,7 +168,9 @@ const Header = ({ displayToggle, handleLeftDrawerToggle }: any) => {
                   sx={{ background: 'transparent' }}
                   onClick={handleLeftDrawerToggle}
                   color="inherit"
-                ></Avatar>
+                >
+                  <MenuOutlined />
+                </Avatar>
               </ButtonBase>
             </Box>
           ) : (
@@ -206,7 +209,12 @@ const Header = ({ displayToggle, handleLeftDrawerToggle }: any) => {
               </Box>
 
               <Box>
-                <Avatar src="" alt="s" />
+                <Button className={classes.ButtonSignIn} disableRipple>
+                  Sign in
+                </Button>
+                <Button variant="contained" className={classes.ButtonSignUp}>
+                  Sign up
+                </Button>
               </Box>
             </>
           )}
