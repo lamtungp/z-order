@@ -139,7 +139,7 @@ const Explore = () => {
   const matchDownSm = useResponsive({ query: 'down', key: 'sm' });
 
   return (
-    <Box component={'section'}>
+    <Box component={'section'} id={'explore'}>
       <SectionContainer backgroundColor="#F7F8FA">
         <SectionTitle title="Khám phá" />
         <Box sx={{ marginBottom: '24px' }}>

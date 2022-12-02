@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   Root: {
     margin: '0 auto',
     padding: '20px 0',
-    maxWidth: 960,
+    maxWidth: 1240,
     alignItems: 'center',
     textAlign: 'center',
 
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   MenuLink: {
     padding: '0 10px',
     fontWeight: 400,
-    color: '#132150',
+    color: '#FFFFFF',
     fontSize: 16,
 
     [theme.breakpoints.down('sm')]: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
   LinkRoot: {
     paddingRight: 10,
-    color: '#132150',
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 400,
 
@@ -91,7 +91,7 @@ const Footer = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <Box sx={{ background: '#ffffff' }}>
+    <Box sx={{ background: '#1368BD' }}>
       <Stack
         className={classes.Root}
         component="footer"

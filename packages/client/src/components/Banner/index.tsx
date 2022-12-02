@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 
   BannerTextBox: {
-    maxWidth: 960,
+    maxWidth: 1240,
     margin: '0 auto',
     padding: '0 20px',
 

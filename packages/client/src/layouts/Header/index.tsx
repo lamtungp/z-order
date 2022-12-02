@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   Root: {
     top: 0,
     zIndex: 1100,
-    padding: '0.5rem 0',
     position: 'fixed',
     width: '100%',
     color: '#ffffff',
@@ -58,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 
   Header: {
-    maxWidth: 960,
+    maxWidth: 1240,
     display: 'flex',
     margin: '0 auto',
     justifyContent: 'space-between',
