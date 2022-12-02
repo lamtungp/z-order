@@ -7,6 +7,7 @@ import {
 } from 'src/redux/common/common.slice';
 import { useAppSelector, useAppDispatch } from 'src/redux/hooks';
 
+import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
@@ -39,7 +40,7 @@ const Layout = ({ children }: LayoutProps) => {
         drawerToggle={handleLeftDrawerToggle}
       />
       <main>{children}</main>
-      <></>
+      <Footer />
     </Box>
   );
 };

@@ -83,6 +83,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   ListItem: {
     cursor: 'pointer',
     padding: '0.5rem',
+    opacity: 0.8,
     lineHeight: 1.5,
     fontSize: 16,
     fontWeight: 400,

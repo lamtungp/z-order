@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 
     [theme.breakpoints.down('md')]: {
       position: 'relative',
-      paddingTop: 20,
-      color: '#000',
+      padding: '20px 0 60px',
+      color: '#132150',
     },
   },
 
@@ -154,7 +154,7 @@ const Banner = () => {
                     <Tag
                       sx={{
                         borderColor: '#F3BA00',
-                        color: matchDownMd ? '#000000' : '#FFFFFF',
+                        color: matchDownMd ? '#132150' : '#FFFFFF',
                         marginRight: '6px',
                       }}
                       variant="outlined"
